@@ -1,19 +1,17 @@
+import os
 import serial
 import time
-ser = serial.Serial('COM6',9600)
+
+# if the system is windows
+if os.name == 'nt':
+    ser = serial.Serial('COM6', 9600)
+else:
+    ser = serial.Serial('/dev/ttyUSB0', 9600)
 time.sleep(2)
 
-b = "both box is not reached"
-print (b)
-while True: 
-#for i in range(10):
-
+b = 0
+while True:
     b = ser.readline()
-
-    #print ("number ", i, "is", b)
     print (b)
-
-#ser.close()
-
 
 
