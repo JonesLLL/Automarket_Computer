@@ -23,7 +23,17 @@ def detecting_Serial():
 
     # b = 0
     while True:
-        b = ser.readline()
+        time.sleep(0.1)
+        b = ord(ser.read(1))
         print (b)
+  
+
+
+
+
+
+
+
+
 
 detecting_Serial()
